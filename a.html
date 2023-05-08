@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        font-size: 5rem;
+      }
+      /* desktop first (desktop->to->mobile) */
+      @media (max-width: 1000px) {
+        h1 {
+          font-size: 3.5rem;
+        }
+      }
+      @media (max-width: 760px) {
+        h1 {
+          font-style: 2.5rem;
+        }
+      }
+      @media (max-width: 576px) {
+        h1 {
+          font-size: 1.3rem;
+        }
+      }
+      /* mobile-first (mobile->to->desktop) */
+      @media (min-width: 576px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 3.5rem;
+        }
+      }
+      @media (min-width: 1000px) {
+        h1 {
+          font-size: 5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <span class="countfect" data-num="900"></span>
+    <span class="countfect" data-num="1800"></span>
+    <span class="countfect" data-num="2400"></span>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/countfect.min.js"></script>
+  </body>
+</html>

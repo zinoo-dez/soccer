@@ -1,0 +1,298 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+@font-face {
+    font-family: 'main font';
+    src: url('../fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'second font';
+    src: url('../fonts/Oswald-VariableFont_wght.ttf');
+}
+
+:root {
+    --main-color: #B3E5FC;
+    --secondary-color: #67a0cf22;
+    --third-color: #10cca0;
+    --font-color: #096c3b;
+    --bg-color: #288f7cc3;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../imgs/vienna-reyes-qCrKTET_09o-unsplash.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px var(--font-color);
+    padding: 0 100px 0 100px;
+}
+
+.logo {
+    width: 60px;
+    border-radius: 30px;
+    border: 3px solid var(--main-color);
+    transition: .3s;
+}
+
+.logo:hover {
+    transform: rotate(180deg);
+}
+
+.nav-items a {
+    background: var(--main-color);
+    color: var(--third-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-items a:hover {
+    background: var(--font-color);
+    color: var(--main-color);
+}
+
+.banner {
+    width: 40%;
+    height: auto;
+    padding: 30px;
+    background: rgba(13, 168, 109, 0.758);
+    backdrop-filter: blur(2px);
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.banner h3 {
+    font-size: 2rem;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(18, 50, 29);
+}
+
+.banner h3 {
+    font-size: 1.8rem;
+}
+
+.btn {
+    background: var(--font-color);
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: .4s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+#bars {
+    background: var(--main-color);
+    color: var(--third-color);
+    padding: 5px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+}
+
+/* about me sction */
+#about {
+    padding: 80px 50px;
+    /* background: var(--third-color); */
+}
+
+section h3,
+section h1 {
+    text-align: center;
+}
+
+section h3 {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+section h1 {
+    font-size: 3.2rem;
+    border-bottom: 4px solid var(--main-color);
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 80px;
+    /* text-decoration: underline; */
+}
+
+.about-section {
+    display: flex;
+}
+
+.about-img {
+    flex-basis: 400px;
+    height: 500px;
+    background: #000;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-info {
+    flex: 1;
+    padding: 10px 50px;
+}
+
+.about-card-group {
+    display: flex;
+}
+
+.about-card {
+    padding: 20px;
+}
+
+/* member-card_section section */
+.member-card_section {
+    background: red;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.member-card {
+    flex: 1 1 23rem;
+    border: 1px solid pink;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-img,
+.member-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.member-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0000002b;
+    backdrop-filter: blur(4px);
+    /* transform: scale(0); */
+    transition: .5s;
+    transform: translateY(-100%);
+    /* transform-origin: top right; */
+}
+
+.member-text h1 {
+    border-bottom: none;
+    margin-bottom: 120px;
+    /* opacity: 0; */
+}
+
+.member-card:hover .member-text {
+    /* transform: scale(1); */
+    transform: translate(0);
+}
+
+.member-img {
+    /* display: none; */
+}
+
+
+/* ***********************************************************************************************Media-query****************************************************************************************************************************** */
+@media (max-width:650px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+        padding: 0 40px;
+    }
+
+    #bars {
+        display: block;
+    }
+
+    .nav-items {
+        position: absolute;
+        padding: 20px 100px;
+        background: var(--bg-color);
+        backdrop-filter: blur(5px);
+        z-index: 100;
+        /* background: red; */
+        top: 90px;
+        left: 0;
+        right: 0;
+        transition: .4s;
+        transform: translateX(-130%);
+        /* display: none; */
+    }
+
+    .show {
+        transform: translateX(0%);
+        /* display: block; */
+    }
+
+    .nav-items a {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .banner {
+        width: 80%;
+        margin-left: 20px;
+        margin-top: 50px;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #about {
+        padding: 80px 20px;
+    }
+
+    #about h1 {
+        font-size: 2.2rem;
+    }
+
+    #about h3 {
+        font-size: 1.6rem;
+    }
+
+
+}
